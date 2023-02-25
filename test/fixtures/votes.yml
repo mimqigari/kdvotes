@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ward: MyString
+  punit: MyString
+  totalreg: 1
+  validvotes: 1
+  invalidvotes: 1
+  pdp: 1
+  apc: 1
+  nnpp: 1
+  prp: 1
+  lp: 1
+  zlp: 1
+  others: 1
+  pic: MyString
+  user_id: 1
+
+two:
+  ward: MyString
+  punit: MyString
+  totalreg: 1
+  validvotes: 1
+  invalidvotes: 1
+  pdp: 1
+  apc: 1
+  nnpp: 1
+  prp: 1
+  lp: 1
+  zlp: 1
+  others: 1
+  pic: MyString
+  user_id: 1
