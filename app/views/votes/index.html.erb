@@ -13,7 +13,7 @@
           <div class="single-team">
             <img src="https://pbs.twimg.com/profile_images/1517115858291773441/PH_NqklF_400x400.jpg" class="img-fluid" alt="">
             <h3>PDP</h3>
-            <p>0</p>
+            <p><%=Vote.sum(:pdp) %></p>
           </div>  
           
         </div><!--- END OUR TEAM -->  
@@ -23,7 +23,7 @@
           <div class="single-team">
             <img src="https://media.premiumtimesng.com/wp-content/files/2013/03/Screen-shot-2013-03-05-at-10.52.04-PM.png" class="img-fluid" alt="">
             <h3>APC</h3>
-            <p>0</p>
+            <p><%=Vote.sum(:apc) %></p>
           </div>  
              
         </div><!--- END OUR TEAM -->  
@@ -33,7 +33,7 @@
           <div class="single-team">
             <img src="https://i0.wp.com/www.thisdaylive.com/wp-content/uploads/NNPP.gif?fit=800%2C600&ssl=1&is-pending-load=1" class="img-fluid" alt="">
             <h3>NNPP</h3>
-            <p>0</p>
+            <p><%=Vote.sum(:nnpp) %></p>
           </div>  
                   
         </div><!--- END OUR TEAM -->  
@@ -43,7 +43,7 @@
           <div class="single-team">
             <img src="https://i0.wp.com/radionigeria.gov.ng/wp-content/uploads/2022/10/Labour_Party_Nigeria_logo.png?fit=335%2C298&ssl=1" class="img-fluid" alt="">
             <h3>LP</h3>
-            <p>0</p>
+            <p><%=Vote.sum(:lp) %></p>
           </div>  
                    
         </div><!--- END OUR TEAM -->  
@@ -53,7 +53,7 @@
           <div class="single-team">
             <img src="https://dailypost.ng/wp-content/uploads/2018/10/PRP-New.png" class="img-fluid" alt="">
             <h3>PRP</h3>
-            <p>0</p>
+            <p><%=Vote.sum(:prp) %></p>
           </div>  
               
         </div><!--- END OUR TEAM -->  
@@ -63,13 +63,13 @@
           <div class="single-team">
             <img src="https://bootdey.com/img/Content/avatar/avatar6.p" class="img-fluid" alt="">
             <h3>Others</h3>
-            <p></p>
+            <p><%=Vote.sum(:others) %></p>
           </div>  
             
-        </div><!--- END OUR TEAM -->  
-      </div><!--- END COL -->     
-    </div><!--- END ROW -->     
-  </div><!--- END CONTAINER -->
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -79,7 +79,7 @@
     <div class="row align-items-center">
         <div class="col-md-6">
             <div class="mb-3">
-                <h5 class="card-title">Results: 0 / 769 .  <span class="text-muted fw-normal ms-2"></span></h5> <p> KADUNA SOUTH HOUSE OF REPS ELECTION</p>
+                <h5 class="card-title">Results: <%=Vote.count %> / 769 .  <span class="text-muted fw-normal ms-2"></span></h5> <p> KADUNA SOUTH HOUSE OF REPS ELECTION</p>
             </div>
         </div>
         <div class="col-md-6">
@@ -97,13 +97,26 @@
  
 </div>
 
-<div id="votes">
+ <table class="table">
+  <thead>
+    <tr>
+      <th scope="col"> </th>
+      <th scope="col">LGA</th>
+      <th scope="col">Ward</th>
+      <th scope="col">Polling Unit</th>
+    </tr>
+  </thead>
+  <tbody>
+
   <% @votes.each do |vote| %>
     <%= render vote %>
-    <p>
-      <%= link_to "Show this vote", vote %>
-    </p>
+  <!--   <p>
+      %= link_to "Show this vote", vote %>
+    </p> -->
   <% end %>
+  </tbody>
+</table>
+  
 </div>
 
 
