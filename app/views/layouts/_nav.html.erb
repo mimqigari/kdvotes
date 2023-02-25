@@ -7,7 +7,12 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul align="left" class="navbar-nav me-auto mb-2 mb-lg-0">
         <li align="left" class="nav-item">
+          <% if current_user %>
+          <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+          <% else %>
           <%= link_to "Sign in", new_user_session_path, class:'btn btn-primary' %>
+          <% end %>
+         
         </li>
         
       
